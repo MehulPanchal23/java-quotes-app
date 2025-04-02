@@ -1,9 +1,9 @@
 services:
-  flaskapptest:
+  javaapp:
     image: mehulpanchal2323/javaapp:latest
     container_name: javaapp
     ports:
-      - "80:80"
+      - "8000:8000"
     networks:
       - javaappnet
 
