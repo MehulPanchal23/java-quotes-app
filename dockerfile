@@ -33,6 +33,7 @@ EXPOSE 8000
 
 
 ## Server the app / keep it running
-## syntax --- CMD ["CommandName","FILename"]
+## syntax --- CMD ["CommandName","FileName"]
+# Check how to run Node,Python,Java file
 
 CMD ["java","Main"]
