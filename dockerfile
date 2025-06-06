@@ -21,7 +21,7 @@ COPY src/Main.java /app/Main.java
 COPY quotes.txt quotes.txt
 
 
-## Run the command t0 to install libs or compile code 
+## Run the command to install libs or compile code (This is called the BUILD)
 ## Syntax :----->>  RUN compiler name code filename
 
 RUN javac Main.java
