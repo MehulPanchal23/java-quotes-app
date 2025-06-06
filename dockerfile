@@ -23,6 +23,7 @@ COPY quotes.txt quotes.txt
 
 ## Run the command to install libs or compile code (This is called the BUILD)
 ## Syntax :----->>  RUN compiler name code filename
+## Command to build the java or pytho or other application
 
 RUN javac Main.java
 
@@ -34,6 +35,6 @@ EXPOSE 8000
 
 ## Server the app / keep it running
 ## syntax --- CMD ["CommandName","FileName"]
-# Check how to run Node,Python,Java file
+# Check how to run Node,Python,Java file/application
 
 CMD ["java","Main"]
