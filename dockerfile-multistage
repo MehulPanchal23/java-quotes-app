@@ -10,7 +10,7 @@ COPY quotes.txt quotes.txt
 # Compile the Java source file
 RUN javac Main.java
 
-# Stage 2: Runtime stage, Here we are using distroless of java to run only application
+# Stage 2: Runtime stage, Here we are using distroless image of java to run only application
 # https://github.com/GoogleContainerTools/distroless/tree/main/java
 FROM gcr.io/distroless/java17-debian12
 
