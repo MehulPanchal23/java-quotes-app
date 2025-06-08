@@ -1,0 +1,26 @@
+# Stage 1: Build stage
+FROM openjdk:17-jdk-alpine AS builder
+
+WORKDIR /app
+
+# Copy source code and data file
+COPY src/Main.java Main.java
+COPY quotes.txt quotes.txt
+
+# Compile the Java source file
+RUN javac Main.java
+
+# Stage 2: Runtime stage, Here we are using distroless of java to run only application
+# https://github.com/GoogleContainerTools/distroless/tree/main/java
+FROM gcr.io/distroless/java17-debian12
+
+WORKDIR /app
+
+# Copy the compiled class and resource file from builder
+COPY --from=builder /app/Main.class Main.class
+COPY --from=builder /app/quotes.txt quotes.txt
+
+EXPOSE 8000
+
+# Only specify the class name — distroless image automatically uses Java runtime
+CMD ["Main"]
